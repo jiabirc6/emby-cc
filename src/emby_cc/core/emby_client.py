@@ -230,6 +230,30 @@ class EmbyClient:
         )
         resp.raise_for_status()
 
+
+    async def stream_media(self, item_id: str, duration_seconds: int = 300) -> bool:
+        """慢速流式播放"""
+        import random as _rand
+        ua = _rand.choice([
+            "Yamby/2.1.0 (iOS; 17.4; iPad14,5)",
+            "Yamby/2.0.5 (Android; 14; Pixel 8 Pro)",
+        ])
+        headers = {"User-Agent": ua, "Accept": "*/*"}
+        url = f"{self.base_url}/Videos/{item_id}/stream"
+        async with httpx.AsyncClient(timeout=httpx.Timeout(300.0)) as c:
+            async with c.stream("GET", url, headers=headers) as resp:
+                resp.raise_for_status()
+                elapsed = 0
+                while elapsed < duration_seconds:
+                    try:
+                        chunk = await asyncio.wait_for(resp.aiter.read(1024), timeout=10)
+                        if not chunk:
+                            break
+                    except asyncio.TimeoutError:
+                        pass
+                    elapsed += 5
+        return True
+
     async def _report_stopped(self, session: str):
         """汇报播放结束"""
         try:
