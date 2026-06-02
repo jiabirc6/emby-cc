@@ -39,7 +39,7 @@ class EmbyClient:
         )
 
     async def close(self):
-        await self._client.aclose()
+        await self._session.close() if self._curl else await self._session.aclose()
 
     @property
     def headers(self) -> dict[str, str]:
@@ -52,7 +52,7 @@ class EmbyClient:
     @retry(max_retries=3, base_delay=2.0)
     async def detect_version(self) -> str:
         """自动检测 Emby 服务器版本"""
-        resp = await self._client.get(
+        resp = await self._req("GET", 
             "/System/Info/Public",
             headers={"Accept": "application/json"},
         )
@@ -70,7 +70,7 @@ class EmbyClient:
             self._auth_token = self.api_key
             return self.api_key
 
-        resp = await self._client.post(
+        resp = await self._req("POST", 
             "/Users/AuthenticateByName",
             headers={
                 "X-Emby-Authorization": (
@@ -96,7 +96,7 @@ class EmbyClient:
         """带降级的 AdditionalParts 获取"""
         await self._ensure_auth()
         try:
-            resp = await self._client.get(
+            resp = await self._req("GET", 
                 f"/Users/{user_id}/AdditionalParts",
                 headers=self.headers,
             )
@@ -110,7 +110,7 @@ class EmbyClient:
 
     async def _fallback_user_info(self, user_id: str) -> dict:
         """降级获取用户信息"""
-        resp = await self._client.get(
+        resp = await self._req("GET", 
             f"/Users/{user_id}",
             headers=self.headers,
         )
@@ -123,7 +123,7 @@ class EmbyClient:
         if self._user_id:
             return self._user_id
         await self._ensure_auth()
-        resp = await self._client.get("/Users", headers=self.headers)
+        resp = await self._req("GET", "/Users", headers=self.headers)
         resp.raise_for_status()
         users = resp.json()
         for user in users:
@@ -137,7 +137,7 @@ class EmbyClient:
         """随机获取媒体项（用于保活）"""
         await self._ensure_auth()
         user_id = await self.get_user_id()
-        resp = await self._client.get(
+        resp = await self._req("GET", 
             f"/Users/{user_id}/Items",
             headers=self.headers,
             params={
@@ -155,7 +155,7 @@ class EmbyClient:
     async def mark_played(self, item_id: str, user_id: str) -> bool:
         """标记为已播放"""
         await self._ensure_auth()
-        resp = await self._client.post(
+        resp = await self._req("POST", 
             f"/Users/{user_id}/Items/{item_id}/Played",
             headers=self.headers,
         )
@@ -199,7 +199,7 @@ class EmbyClient:
 
     async def _create_playback_session(self, item_id: str) -> str:
         """创建播放会话"""
-        resp = await self._client.post(
+        resp = await self._req("POST", 
             "/Sessions/Playing",
             headers=self.headers,
             json={
@@ -217,7 +217,7 @@ class EmbyClient:
         self, session: str, progress: float, position: int, runtime: int
     ):
         """汇报播放进度"""
-        resp = await self._client.post(
+        resp = await self._req("POST", 
             "/Sessions/Playing/Progress",
             headers=self.headers,
             json={
@@ -257,7 +257,7 @@ class EmbyClient:
     async def _report_stopped(self, session: str):
         """汇报播放结束"""
         try:
-            await self._client.post(
+            await self._req("POST", 
                 "/Sessions/Playing/Stopped",
                 headers=self.headers,
                 json={
