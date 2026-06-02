@@ -38,6 +38,10 @@ class EmbyClient:
             h["X-Emby-Token"] = token
         return h
 
+    def _check_status(self, resp):
+        if resp.status_code >= 400:
+            raise Exception(f"HTTP {resp.status_code}: {resp.text[:200]}")
+
     async def _req(self, method, url, **kw):
         if self._curl:
             r = await self._session.request(method, url, **kw)
@@ -47,7 +51,7 @@ class EmbyClient:
     @retry(max_retries=3, base_delay=2.0)
     async def detect_version(self):
         resp = await self._req("GET", "/System/Info/Public", headers={"Accept": "application/json"})
-        resp.raise_for_status()
+        self._check_status(resp)
         info = resp.json()
         self._server_version = info.get("Version", "4.7.0.0")
         logger.info(f"Emby: {info.get('ServerName', '?')} v{self._server_version}")
@@ -61,7 +65,7 @@ class EmbyClient:
         resp = await self._req("POST", "/Users/AuthenticateByName",
             headers={"X-Emby-Authorization": 'MediaBrowser Client="Emby-CC", Device="Python", DeviceId="emby-cc-001", Version="0.1.0"'},
             json={"Username": self.username, "Pw": self.password})
-        resp.raise_for_status()
+        self._check_status(resp)
         data = resp.json()
         self._auth_token = data["AccessToken"]
         self._user_id = data["User"]["Id"]
@@ -78,7 +82,7 @@ class EmbyClient:
             return self._user_id
         await self._ensure_auth()
         resp = await self._req("GET", "/Users", headers=self.headers)
-        resp.raise_for_status()
+        self._check_status(resp)
         for u in resp.json():
             if u.get("Name") == self.username:
                 self._user_id = u["Id"]
@@ -91,13 +95,13 @@ class EmbyClient:
         uid = await self.get_user_id()
         resp = await self._req("GET", f"/Users/{uid}/Items", headers=self.headers,
             params={"Recursive": "true", "IncludeItemTypes": "Movie,Episode", "Limit": limit, "SortBy": "Random"})
-        resp.raise_for_status()
+        self._check_status(resp)
         return resp.json().get("Items", [])
 
     async def _create_playback_session(self, item_id):
         resp = await self._req("POST", "/Sessions/Playing", headers=self.headers,
             json={"ItemId": item_id, "MediaSourceId": item_id, "CanSeek": True, "IsPaused": False, "IsMuted": False})
-        resp.raise_for_status()
+        self._check_status(resp)
         return item_id
 
     async def _report_progress(self, session, progress, position, runtime):
