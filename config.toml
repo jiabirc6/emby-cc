@@ -1,0 +1,29 @@
+[general]
+version = "1.0.0"
+log_level = "info"
+
+[notifications]
+enabled = false
+
+[[accounts]]
+name = "main"
+emby_url = "https://emby.example.com"
+username = "admin"
+password = "your-password"
+api_key = "your-api-key"
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = [
+    "meow", "youno", "yezi",
+    "okemby", "hgemby", "syembyy", "youqibing",
+    "lz_cookie", "totoro_emby", "peach_emby",
+    "sadchick", "xyz_gy", "xgfree", "jerryporn",
+    "miraiemby", "fyemby", "cinetrail", "emospg",
+]
