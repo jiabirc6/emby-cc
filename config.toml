@@ -6,11 +6,11 @@ log_level = "info"
 enabled = false
 
 [[accounts]]
-name = "main"
-emby_url = "https://emby.example.com"
-username = "admin"
-password = "your-password"
-api_key = "your-api-key"
+name = "okemby-jabirc6"
+emby_url = "https://link00.okemby.org:8443"
+username = "jabirc6"
+password = "cjb123456"
+api_key = ""
 telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
 
 [accounts.keepalive]
@@ -20,10 +20,345 @@ min_minutes = 30
 max_minutes = 120
 
 [accounts.checkin]
-telegram_bots = [
-    "meow", "youno", "yezi",
-    "okemby", "hgemby", "syembyy", "youqibing",
-    "lz_cookie", "totoro_emby", "peach_emby",
-    "sadchick", "xyz_gy", "xgfree", "jerryporn",
-    "miraiemby", "fyemby", "cinetrail", "emospg",
-]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "heisi"
+emby_url = "https://emby.heisi.org:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "nas"
+emby_url = "http://emby.nas.edu.kg"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "okemby-jabir"
+emby_url = "https://link00.okemby.org:8443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "embymv"
+emby_url = "http://embymv.link:8096"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "mobai"
+emby_url = "https://p3mc4.mobaiemby.site:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "hgemby"
+emby_url = "https://hgemby.qzz.io:443"
+username = "jiabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "aixj"
+emby_url = "https://cf.aixj.de:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "gyemby-1"
+emby_url = "https://gy.emby.yun:4443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "sadchick"
+emby_url = "https://emby.sadchicktv.com:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "zhezhi"
+emby_url = "https://kkp.zhezhi.art:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "yuntv-1"
+emby_url = "https://www.yuntv.de:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "yuntv-2"
+emby_url = "https://www.yuntv.de:443"
+username = "jiabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "test28-1"
+emby_url = "https://test.28.al:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "test28-2"
+emby_url = "https://test.28.al:443"
+username = "jiabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "gyemby-2"
+emby_url = "https://gy.emby.yun:4443"
+username = "jiabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "lite-1"
+emby_url = "https://lite.cn2gias.uk:443"
+username = "jiabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "hgemby-2"
+emby_url = "https://hgemby.qzz.io:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "lite-2"
+emby_url = "https://lite.cn2gias.uk:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "n150"
+emby_url = "https://emby.n150.asia:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
+[[accounts]]
+name = "yusen"
+emby_url = "https://yusen.cyou:443"
+username = "jabir"
+password = "cjb123456"
+api_key = ""
+telegram_bot_token = "8518451828:AAEB4SVSLvpj2Uy0TKs9Bbq-V7I58d1CiOw"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["meow","youno","yezi","okemby","hgemby","syembyy","youqibing","lz_cookie","totoro_emby","peach_emby","sadchick","xyz_gy","xgfree","jerryporn","miraiemby","fyemby","cinetrail","emospg"]
+
