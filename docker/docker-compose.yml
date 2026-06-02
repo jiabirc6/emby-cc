@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  emby-cc:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: emby-cc
+    restart: unless-stopped
+    volumes:
+      - ../config.toml:/app/config.toml:ro
+    environment:
+      - TZ=Asia/Shanghai
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

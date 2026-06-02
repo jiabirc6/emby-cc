@@ -1,0 +1,56 @@
+[general]
+version = "1.0.0"
+log_level = "info"
+health_port = 8080
+
+[auth]
+server = ""
+fallback_server = ""
+timeout = 30
+
+[notifications]
+enabled = true
+type = "telegram"
+bot_token = ""
+chat_id = ""
+notify_on = ["error", "warning"]
+
+[[accounts]]
+name = "主力号"
+emby_url = "https://emby.example.com"
+username = "admin"
+password = "your-password"
+api_key = "your-api-key"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 6
+min_minutes = 30
+max_minutes = 120
+
+[accounts.checkin]
+telegram_bots = ["zyfxbot", "csbot", "checkbot"]
+
+[[accounts]]
+name = "小号1"
+emby_url = "https://emby2.example.com"
+username = "user1"
+password = "your-password"
+api_key = "your-api-key"
+
+[accounts.keepalive]
+enabled = true
+interval_hours = 12
+min_minutes = 20
+max_minutes = 60
+
+[accounts.checkin]
+telegram_bots = ["zyfxbot"]
+
+[dashboard]
+enabled = false
+port = 8081
+
+[distributed]
+enabled = false
+backend = "sqlite"
