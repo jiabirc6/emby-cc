@@ -1,8 +1,8 @@
-import asyncio
-
 """Emby API 客户端 - 版本兼容层"""
 
 from __future__ import annotations
+
+import asyncio
 
 import random
 from typing import Any, Optional
