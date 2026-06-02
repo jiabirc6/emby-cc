@@ -24,6 +24,7 @@ _TEMPLATE_A = [
     ("miraiemby", "miraiemby_bot"),
     ("fyemby", "fyemby_bot"),
     ("cinetrail", "Cinetrail_bot"),
+    ("fortesttlbot", "fortesttlbot_bot"),
 ]
 
 _TEMPLATE_B = [
