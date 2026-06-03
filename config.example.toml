@@ -1,0 +1,34 @@
+# Emby-CC Configuration
+# Copy this file to config.toml and fill in your details
+
+version = "1.0.0"
+log_level = "info"    # debug, info, warning, error
+
+[[accounts]]
+name = "my_account"               # Account name (for logging)
+emby_url = "https://emby.example.com"  # Emby server URL
+username = "my_username"
+password = "my_password"          # Leave empty if using api_key
+
+# Emby API Key (optional, alternative to password)
+# Generate at: Emby Dashboard > API Keys
+# api_key = ""
+
+# Keepalive settings
+[accounts.keepalive]
+enabled = true
+interval_hours = 6        # Hours between keepalive runs
+min_minutes = 30          # Min playback duration (minutes)
+max_minutes = 120         # Max playback duration (minutes)
+
+# Checkin (Telegram bot sign-in)
+[accounts.checkin]
+telegram_bots = []        # List of Telegram bot names to sign in with
+
+# Notification settings (optional)
+[notifications]
+enabled = false
+type = "telegram"         # telegram, discord, webhook
+bot_token = ""            # Telegram bot token
+chat_id = ""              # Telegram chat ID
+notify_on = ["error", "warning"]
