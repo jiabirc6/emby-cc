@@ -50,13 +50,8 @@ class EmbyClient:
         self._auth_token: Optional[str] = None
         self._device_id = str(_uuid.uuid4()).upper()
         self._device_info: Optional[str] = None
-        try:
-            from curl_cffi.requests import AsyncSession as CurlSession
-            self._curl = True
-            self._session = CurlSession(base_url=self.base_url, timeout=30.0)
-        except ImportError:
-            self._curl = False
-            self._session = httpx.AsyncClient(base_url=self.base_url, timeout=httpx.Timeout(30.0), follow_redirects=True)
+        self._curl = False
+        self._session = httpx.AsyncClient(base_url=self.base_url, timeout=httpx.Timeout(30.0), follow_redirects=True)
 
     async def close(self):
         if self._curl:
