@@ -1,4 +1,4 @@
-"""Emby API client with curl_cffi TLS fingerprint"""
+﻿"""Emby API client with curl_cffi TLS fingerprint"""
 from __future__ import annotations
 import asyncio, random
 from typing import Optional
@@ -59,7 +59,7 @@ class EmbyClient:
 
     def _fake_env(self):
         import uuid as _uuid
-        clients = [("Yamby", "2.1.0"), ("Yamby", "2.0.8"), ("Fileball", "2.5.2"), ("Fileball", "2.5.1"), ("Filebar", "1.8.0")]
+        clients = [("Yamby", "2.1.0"), ("Yamby", "2.0.8"), ("Yamby", "2.0.5")]
         client, ver = random.choice(clients)
         devices = ["iPhone", "iPad", "Pixel 8 Pro", "SM-S918B"]
         device = random.choice(devices)
@@ -127,3 +127,4 @@ class EmbyClient:
                 json={"ItemId": session, "MediaSourceId": session, "PositionTicks": 0})
         except Exception:
             pass
+
