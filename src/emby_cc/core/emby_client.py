@@ -57,13 +57,26 @@ class EmbyClient:
         logger.info(f"Emby: {info.get('ServerName', '?')} v{self._server_version}")
         return self._server_version
 
+    def _fake_env(self):
+        import uuid as _uuid
+        clients = [("Yamby", "2.1.0"), ("Yamby", "2.0.8"), ("Fileball", "2.5.2"), ("Fileball", "2.5.1"), ("Filebar", "1.8.0")]
+        client, ver = random.choice(clients)
+        devices = ["iPhone", "iPad", "Pixel 8 Pro", "SM-S918B"]
+        device = random.choice(devices)
+        device_id = str(_uuid.uuid4()).upper()
+        return client, ver, device, device_id
+
+    def _auth_header(self):
+        client, ver, device, device_id = self._fake_env()
+        return f'MediaBrowser Client="{client}", Device="{device}", DeviceId="{device_id}", Version="{ver}"'
+
     @retry(max_retries=2, base_delay=1.0)
     async def authenticate(self):
         if self.api_key:
             self._auth_token = self.api_key
             return self.api_key
         resp = await self._req("POST", "/Users/AuthenticateByName",
-            headers={"X-Emby-Authorization": 'MediaBrowser Client="Emby-CC", Device="Python", DeviceId="emby-cc-001", Version="0.1.0"'},
+            headers={"X-Emby-Authorization": self._auth_header()},
             json={"Username": self.username, "Pw": self.password})
         self._check_status(resp)
         data = resp.json()
