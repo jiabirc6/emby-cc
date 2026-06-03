@@ -53,7 +53,7 @@ class EmbyClient:
         try:
             from curl_cffi.requests import AsyncSession as CurlSession
             self._curl = True
-            self._session = CurlSession(base_url=self.base_url, timeout=30.0, impersonate="chrome")
+            self._session = CurlSession(base_url=self.base_url, timeout=30.0)
         except ImportError:
             self._curl = False
             self._session = httpx.AsyncClient(base_url=self.base_url, timeout=httpx.Timeout(30.0), follow_redirects=True)
