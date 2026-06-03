@@ -12,13 +12,13 @@ class KeepAliveConfig(BaseModel):
     """保活配置"""
     enabled: bool = True
     interval_hours: int = Field(default=6, ge=1, le=48)
-    min_minutes: int = Field(default=30, ge=5, le=60)
-    max_minutes: int = Field(default=120, ge=30, le=480)
+    min_minutes: int = Field(default=5, ge=1, le=60)
+    max_minutes: int = Field(default=5, ge=1, le=480)
 
     @field_validator("max_minutes")
     @classmethod
     def max_gt_min(cls, v: int, info) -> int:
-        min_val = info.data.get("min_minutes", 5)
+        min_val = info.data.get("min_minutes", 1)
         if v < min_val:
             raise ValueError(f"max_minutes ({v}) must be >= min_minutes ({min_val})")
         return v
